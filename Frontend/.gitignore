@@ -1,0 +1,107 @@
+# Initial Stage - Hide all development files
+node_modules/
+.next/
+out/
+build/
+
+# Hide all components and features for now
+components/
+assets/
+lib/
+hooks/
+types/
+data/
+docs/
+
+# Hide database stuff
+prisma/
+.env
+.env*.local
+
+# Hide all but basic app structure
+app/*
+!app/layout.tsx
+!app/page.tsx
+!app/globals.css
+
+# Logs
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+.pnpm-debug.log*
+*.log
+logs/
+
+# OS files
+.DS_Store
+Thumbs.db
+*.pem
+desktop.ini
+
+# IDE / editor configs
+.idea/
+.vscode/
+*.swp
+*.swo
+.history/
+.settings/
+*.sublime-project
+*.sublime-workspace
+.project
+.classpath
+
+# ESLint cache
+.eslintcache
+.stylelintcache
+
+# Test coverage and reports
+coverage/
+.nyc_output/
+junit.xml
+test-results/
+
+# Build cache and optimization
+.cache/
+.temp/
+.webpack/
+storybook-static/
+.docusaurus/
+
+# Optional: Database files
+*.sqlite
+*.sqlite3
+*.db
+
+# Optional: Generated types and schemas
+generated/
+*.generated.*
+graphql.schema.json
+schema.graphql
+
+# Optional: Temporary files and backups
+*.tmp
+*.temp
+*.bak
+*~
+*.swp
+*.orig
+
+# Optional: Local certificates
+certificates/
+*.crt
+*.key
+*.pem
+
+# Package managers
+bun.lock
+.npm/
+.node_repl_history
+
+# PWA files
+**/public/sw.js
+**/public/workbox-*.js
+**/public/worker-*.js
+**/public/sw.js.map
+**/public/workbox-*.js.map
+**/public/worker-*.js.map
