@@ -1,38 +1,25 @@
-scripts/dev-setup.sh
-# Initial Stage - Hide all development files
+# Dependencies
 node_modules/
+.pnpm-store/
+
+# Next.js build output
 .next/
 out/
 build/
-google-creds.json
-google-creds.json
-*.faiss
-# Hide all components and features for now
-components/
-assets/
-lib/
-hooks/
-types/
-data/
-docs/
 
-# Hide database stuff
-prisma/
+# TypeScript build output
+dist/
+
+# Environment files (keep .env.example for others to use)
 .env
 .env*.local
-
-# Hide all but basic app structure
-app/*
-!app/layout.tsx
-!app/page.tsx
-!app/globals.css
+!.env.example
 
 # Logs
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
 pnpm-debug.log*
-.pnpm-debug.log*
 *.log
 logs/
 
@@ -48,6 +35,64 @@ desktop.ini
 *.swp
 *.swo
 .history/
+.settings/
+*.sublime-project
+*.sublime-workspace
+.project
+.classpath
+
+# ESLint cache
+.eslintcache
+
+# Coverage reports
+coverage/
+.nyc_output/
+
+# Database
+# Keep schema and migrations for others to set up database
+!prisma/schema.prisma
+!prisma/migrations/
+C:\Sankhu Codes and Stuff\Others\Other Projects\random-to-delete\muj_agri_base_clone\PRAGATI-Frontend-main\backend-main\RAG\Data\CSV
+# Sensitive files (NEVER push these)
+google-creds.json
+*.key
+*.pem
+*.cert
+*.p12
+*.pfx
+*.faiss
+backend-main\RAG\Data\CSV
+# Package manager lock files
+# Keep only pnpm-lock.yaml since you're using pnpm
+package-lock.json
+yarn.lock
+!pnpm-lock.yaml
+
+# Temporary files
+*.tmp
+*.temp
+*.bak
+*~
+*.swp
+*.orig
+
+# Build artifacts
+.cache/
+.temp/
+.webpack/
+
+# Test results
+junit.xml
+test-results/
+
+# Optional: Generated types (if you use tRPC or GraphQL codegen)
+generated/
+
+# Keep these files for others to run the app:
+# - scripts/dev-setup.sh (helpful setup script)
+# - docs/ (documentation)
+# - public/ (static assets)
+# - All source code in app/, components/, lib/, hooks/, types/, data/
 .settings/
 *.sublime-project
 *.sublime-workspace
@@ -110,3 +155,8 @@ bun.lock
 **/public/worker-*.js.map
 Frontend/assets/logo.png
 fastapi-backend/Deep_Research/Reports/test_report.pdf
+backend-main/Dockerfile
+backend-main/README.md
+backend-main/Deep_Research/Reports/test_report.pdf
+backend-main/Deep_Research/Reports/agricultural_research_Rice_cultivation_in_North_East_20250817_2233.pdf
+backend-main/start.sh
