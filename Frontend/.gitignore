@@ -1,28 +1,35 @@
-# Initial Stage - Hide all development files
+# Dependencies and build
 node_modules/
 .next/
 out/
 build/
 
-# Hide all components and features for now
-components/
-assets/
+# Keep UI components visible now
+# components/ui is now tracked
+
+# Still hide advanced features
 lib/
 hooks/
 types/
 data/
 docs/
+assets/
 
 # Hide database stuff
 prisma/
 .env
 .env*.local
 
-# Hide all but basic app structure
+# App structure (now allowing more components)
 app/*
 !app/layout.tsx
 !app/page.tsx
 !app/globals.css
+!app/providers.tsx
+
+# Hide specific component types except UI
+components/*
+!components/ui/
 
 # Logs
 npm-debug.log*
