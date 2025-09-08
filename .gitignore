@@ -6,7 +6,7 @@ out/
 build/
 google-creds.json
 google-creds.json
-
+*.faiss
 # Hide all components and features for now
 components/
 assets/
@@ -109,3 +109,4 @@ bun.lock
 **/public/workbox-*.js.map
 **/public/worker-*.js.map
 Frontend/assets/logo.png
+fastapi-backend/Deep_Research/Reports/test_report.pdf
