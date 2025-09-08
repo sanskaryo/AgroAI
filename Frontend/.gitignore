@@ -1,52 +1,94 @@
-# Dependencies and build
+# Dependencies
 node_modules/
+.pnpm-store/
+
+# Next.js build output
 .next/
 out/
 build/
 
-# Environment files
+# TypeScript build output
+dist/
+
+# Environment files (keep .env.example for others to use)
 .env
 .env*.local
 !.env.example
 
-# Expose all necessary features now
-!app/api/
-!app/dashboard/
-!app/chat/
-!app/profile/
-!app/qr-scanner/
+# Logs
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+*.log
 
-# Expose all component types
-!components/
-components/node_modules/
+# OS files
+.DS_Store
+Thumbs.db
 
-# Expose all lib files
-!lib/
-lib/node_modules/
+# IDE / editor configs
+.idea/
+.vscode/
+*.swp
+*.swo
+.history/
+.settings/
+*.sublime-project
+*.sublime-workspace
+.project
+.classpath
 
-# Expose all hooks
-!hooks/
-hooks/node_modules/
+# ESLint cache
+.eslintcache
 
-# Expose all types
-!types/
-types/node_modules/
+# Coverage reports
+coverage/
+.nyc_output/
 
-# Expose data and assets
-!data/
-!assets/
+# Database
+# Keep schema and migrations for others to set up database
+!prisma/schema.prisma
+!prisma/migrations/
 
-# Still hide sensitive files
+# Sensitive files (NEVER push these)
+google-creds.json
 *.key
 *.pem
 *.cert
-.env
-.env*.local
+*.p12
+*.pfx
 
-# Keep database config visible
-!prisma/schema.prisma
-!prisma/migrations/
-prisma/migrations/*-*
+# Package manager lock files
+# Keep only pnpm-lock.yaml since you're using pnpm
+package-lock.json
+yarn.lock
+!pnpm-lock.yaml
+
+# Temporary files
+*.tmp
+*.temp
+*.bak
+*~
+*.swp
+*.orig
+
+# Build artifacts
+.cache/
+.temp/
+.webpack/
+
+# Test results
+junit.xml
+test-results/
+
+# Optional: Generated types (if you use tRPC or GraphQL codegen)
+generated/
+
+# Keep these files for others to run the app:
+# - scripts/dev-setup.sh (helpful setup script)
+# - docs/ (documentation)
+# - public/ (static assets)
+# - All source code in app/, components/, lib/, hooks/, types/, data/
 
 # Hide test files for now
 **/*.test.ts
