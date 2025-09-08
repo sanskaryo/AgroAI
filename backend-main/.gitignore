@@ -9,9 +9,6 @@ develop-eggs/
 dist/
 downloads/
 eggs/
-backend-main\RAG\Data\CSV
-
-backend-main\RAG\Data\CSV
 .eggs/
 lib/
 lib64/
@@ -22,6 +19,10 @@ wheels/
 *.egg-info/
 .installed.cfg
 *.egg
+
+# Data folders (CSV files and datasets)
+RAG/Data/CSV/
+RAG/Data/csv_summaries.csv
 
 # Environment
 .env
