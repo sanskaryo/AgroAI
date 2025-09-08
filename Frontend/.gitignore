@@ -13,22 +13,25 @@ data/
 docs/
 assets/
 
-# Partially expose lib and types
+# Expose necessary lib files
 lib/*
 !lib/auth.ts
+!lib/prisma.ts
 types/*
 !types/auth.d.ts
+!types/database.d.ts
 
-# Still hide hooks except auth
-hooks/*
-!hooks/use-auth.ts
+# Expose database schema and migrations
+!prisma/schema.prisma
+!prisma/migrations/
+prisma/migrations/*-*
 
-# Hide database stuff
-prisma/
+# Environment files
 .env
 .env*.local
+!.env.example
 
-# App structure (now showing auth pages)
+# App structure
 app/*
 !app/layout.tsx
 !app/page.tsx
@@ -36,6 +39,7 @@ app/*
 !app/providers.tsx
 !app/signin/
 !app/signup/
+!app/api/auth/
 
 # Components structure
 components/*
