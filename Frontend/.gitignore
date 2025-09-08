@@ -4,32 +4,43 @@ node_modules/
 out/
 build/
 
-# Keep UI components visible now
+# Keep UI and auth components visible
 # components/ui is now tracked
+# auth components are now tracked
 
 # Still hide advanced features
-lib/
-hooks/
-types/
 data/
 docs/
 assets/
+
+# Partially expose lib and types
+lib/*
+!lib/auth.ts
+types/*
+!types/auth.d.ts
+
+# Still hide hooks except auth
+hooks/*
+!hooks/use-auth.ts
 
 # Hide database stuff
 prisma/
 .env
 .env*.local
 
-# App structure (now allowing more components)
+# App structure (now showing auth pages)
 app/*
 !app/layout.tsx
 !app/page.tsx
 !app/globals.css
 !app/providers.tsx
+!app/signin/
+!app/signup/
 
-# Hide specific component types except UI
+# Components structure
 components/*
 !components/ui/
+!components/auth/
 
 # Logs
 npm-debug.log*
