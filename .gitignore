@@ -108,3 +108,4 @@ bun.lock
 **/public/sw.js.map
 **/public/workbox-*.js.map
 **/public/worker-*.js.map
+Frontend/assets/logo.png

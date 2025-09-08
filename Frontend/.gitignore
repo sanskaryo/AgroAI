@@ -4,47 +4,54 @@ node_modules/
 out/
 build/
 
-# Keep UI and auth components visible
-# components/ui is now tracked
-# auth components are now tracked
-
-# Still hide advanced features
-data/
-docs/
-assets/
-
-# Expose necessary lib files
-lib/*
-!lib/auth.ts
-!lib/prisma.ts
-types/*
-!types/auth.d.ts
-!types/database.d.ts
-
-# Expose database schema and migrations
-!prisma/schema.prisma
-!prisma/migrations/
-prisma/migrations/*-*
-
 # Environment files
 .env
 .env*.local
 !.env.example
 
-# App structure
-app/*
-!app/layout.tsx
-!app/page.tsx
-!app/globals.css
-!app/providers.tsx
-!app/signin/
-!app/signup/
-!app/api/auth/
+# Expose all necessary features now
+!app/api/
+!app/dashboard/
+!app/chat/
+!app/profile/
+!app/qr-scanner/
 
-# Components structure
-components/*
-!components/ui/
-!components/auth/
+# Expose all component types
+!components/
+components/node_modules/
+
+# Expose all lib files
+!lib/
+lib/node_modules/
+
+# Expose all hooks
+!hooks/
+hooks/node_modules/
+
+# Expose all types
+!types/
+types/node_modules/
+
+# Expose data and assets
+!data/
+!assets/
+
+# Still hide sensitive files
+*.key
+*.pem
+*.cert
+.env
+.env*.local
+
+# Keep database config visible
+!prisma/schema.prisma
+!prisma/migrations/
+prisma/migrations/*-*
+
+# Hide test files for now
+**/*.test.ts
+**/*.test.tsx
+**/__tests__/
 
 # Logs
 npm-debug.log*
