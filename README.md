@@ -4,6 +4,33 @@ AgroAI is a comprehensive AI-powered platform designed to assist farmers and agr
 
 ---
 
+## 📖 Table of Contents
+
+1. [🚀 Quick Start](#-quick-start)
+2. [🔐 Environment Variables](#-environment-variables)
+3. [🌾 Features](#-features)
+4. [⚡ Performance & Optimization](#-performance--optimization)
+5. [🏗️ System Architecture](#-system-architecture)
+6. [🎯 Use Cases](#-use-cases)
+7. [🧠 RAG (Retrieval Augmented Generation) System](#-rag-retrieval-augmented-generation-system)
+8. [🤖 Agent Ecosystem](#-agent-ecosystem)
+9. [🛡️ Guardrails System](#-guardrails-system)
+10. [🔬 Deep Research Orchestrator](#-deep-research-orchestrator)
+11. [📊 State Management & Workflow](#-state-management--workflow)
+12. [📁 Project Structure](#-project-structure)
+13. [🔧 Technology Stack](#-technology-stack)
+14. [🛠️ Development Scripts](#-development-scripts)
+15. [📚 Documentation](#-documentation)
+16. [📊 Evaluation & Quality Metrics](#-evaluation--quality-metrics)
+17. [❓ FAQ](#-faq)
+18. [🤝 Contributing](#-contributing)
+19. [🐛 Troubleshooting](#-troubleshooting)
+20. [📄 License](#-license)
+21. [🙏 Acknowledgments](#-acknowledgments)
+22. [💬 Contact](#-contact)
+
+---
+
 ## 🚀 Quick Start
 
 ### Prerequisites
@@ -372,6 +399,64 @@ AgroAI is built on a **multi-agent, RAG-enhanced architecture** that combines ad
 3. **Quality Assurance**: Multi-stage validation with guardrails, grading, and fact-checking
 4. **Retrieval-Augmented Generation**: Context-aware responses using vector databases and web search
 5. **State Management**: LangGraph-based workflow orchestration with state persistence
+
+### Request Flow Example
+
+```
+1. User: "What crops should I plant in Punjab for winter 2025?"
+   ↓
+2. Guardrails: ✓ Agriculture-related (confidence: 0.95)
+   ↓
+3. Router: → CropRecommenderAgent, WeatherForecastAgent
+   ↓
+4. Parallel Execution:
+   - CropRecommenderAgent → "Wheat, mustard, potato recommended"
+   - WeatherForecastAgent → "Cold, dry winter predicted"
+   ↓
+5. Fact Checker: ✓ Verified against knowledge base
+   ↓
+6. Synthesizer: Combines responses coherently
+   ↓
+7. Answer Grader: ✓ Complete and relevant
+   ↓
+8. Final Response: "For Punjab winter 2025, we recommend wheat 
+   (high demand, suitable climate), mustard (cold-resistant), 
+   and potato (profitable). Expected weather: cold and dry."
+```
+
+---
+
+## 🎯 Use Cases
+
+### For Farmers
+
+1. **Crop Planning**: Get data-driven recommendations for crop selection
+2. **Disease Management**: Early detection and treatment of crop diseases
+3. **Weather Preparedness**: Plan activities based on accurate forecasts
+4. **Market Intelligence**: Make informed decisions with real-time pricing
+5. **Risk Mitigation**: Understand and manage agricultural risks
+6. **Financial Planning**: Access information on loans and subsidies
+
+### For Agricultural Advisors
+
+1. **Research Support**: Quick access to agricultural knowledge
+2. **Client Consultation**: Evidence-based recommendations
+3. **Policy Updates**: Stay informed about agricultural policies
+4. **Data Analysis**: Visualize trends and patterns
+
+### For Researchers
+
+1. **Deep Research**: Multi-agent orchestration for complex queries
+2. **Data Aggregation**: Collect information from multiple sources
+3. **Literature Review**: Automated research paper mining
+4. **Trend Analysis**: Market and climate trend identification
+
+### For Agricultural Organizations
+
+1. **Farmer Support**: Scalable advisory services
+2. **Knowledge Dissemination**: Multilingual information delivery
+3. **Risk Assessment**: Portfolio-level risk analysis
+4. **Market Analysis**: Commodity price monitoring
 
 ---
 
@@ -1023,21 +1108,187 @@ Each agent folder contains:
 
 ---
 
+## ❓ FAQ
+
+### General Questions
+
+**Q: What makes AgroAI different from other agricultural AI platforms?**
+A: AgroAI uses a unique multi-agent architecture with adaptive RAG, allowing it to intelligently route queries to specialized agents. It combines retrieval-augmented generation with domain-specific tools and provides quality assurance through multi-stage validation.
+
+**Q: Can I use AgroAI offline?**
+A: Yes! AgroAI supports offline mode using a fine-tuned Qwen 1.5 model. The system automatically detects internet connectivity and switches to local inference when offline.
+
+**Q: What languages does AgroAI support?**
+A: AgroAI supports multiple Indian languages through the MultiLingualAgent, including Hindi, Tamil, Telugu, Bengali, Marathi, and more. The frontend also has multilingual support.
+
+**Q: Is AgroAI free to use?**
+A: The codebase is open-source under MIT license. However, you'll need your own API keys for services like Google Gemini, Groq, and Cohere. Offline mode can reduce API costs.
+
+### Technical Questions
+
+**Q: How does the Adaptive RAG system work?**
+A: The Adaptive RAG classifies queries into three complexity levels (simple, moderate, complex) and routes them through appropriate workflows. Simple queries get direct answers, moderate queries use iterative refinement, and complex queries employ multi-step research.
+
+**Q: What is the role of the Guardrails system?**
+A: Guardrails validate that queries are agriculture-related, classify query types (greeting, agriculture, general, inappropriate), and provide confidence scores. This ensures the system only processes relevant agricultural queries.
+
+**Q: How do multiple agents work together?**
+A: The RouterAgent analyzes queries and selects appropriate agents. These agents execute in parallel, and their responses are fact-checked, synthesized, and graded before being returned to the user.
+
+**Q: What evaluation metrics does AgroAI use?**
+A: AgroAI uses RAGAS framework (context relevance, faithfulness, answer relevance), custom MCQ benchmarks, agricultural QA datasets, and multi-dimensional quality metrics including hallucination detection.
+
+**Q: Can I add my own custom agents?**
+A: Yes! The architecture is modular. You can create custom agents following the existing agent patterns in the `backend-main/Agents/` directory and register them in the router.
+
+**Q: How is data privacy handled?**
+A: User data is stored securely in PostgreSQL with encrypted passwords (bcrypt). JWT authentication manages sessions. The system includes CSRF protection and input validation. API keys are stored in environment variables, never in code.
+
+### Deployment Questions
+
+**Q: Can I deploy AgroAI on my own servers?**
+A: Yes, AgroAI can be deployed using Docker (docker-compose files included) or manually. You'll need to configure environment variables and ensure all dependencies are installed.
+
+**Q: What are the hardware requirements?**
+A: Minimum: 4GB RAM, 2 CPU cores. Recommended: 8GB+ RAM, 4+ CPU cores, GPU (optional, for offline mode). For production: consider load balancing and caching strategies.
+
+**Q: How do I scale AgroAI for multiple users?**
+A: Use the Parallel RAG system, implement load balancing, leverage the caching layer (GPTCache), and consider deploying multiple agent instances. FastAPI supports async operations for better concurrency.
+
+---
+
 ## 🤝 Contributing
 
-1. Fork the repo and create your branch (`git checkout -b feature-name`)
-2. Commit your changes (`git commit -am 'Add new feature'`)
-3. Push to the branch (`git push origin feature-name`)
-4. Open a Pull Request
+We welcome contributions to AgroAI! Here's how you can help:
+
+### How to Contribute
+
+1. **Fork the repository** and create your branch:
+   ```bash
+   git checkout -b feature/your-feature-name
+   ```
+
+2. **Make your changes**:
+   - Follow existing code style and conventions
+   - Add tests for new features
+   - Update documentation as needed
+   - Ensure all tests pass
+
+3. **Commit your changes**:
+   ```bash
+   git commit -am 'Add new feature: description'
+   ```
+
+4. **Push to your branch**:
+   ```bash
+   git push origin feature/your-feature-name
+   ```
+
+5. **Open a Pull Request**:
+   - Provide a clear description of changes
+   - Reference any related issues
+   - Include screenshots for UI changes
+
+### Contribution Areas
+
+- **New Agents**: Add specialized agricultural agents
+- **RAG Improvements**: Enhance retrieval and generation quality
+- **Frontend Features**: Improve UI/UX and add new tools
+- **Documentation**: Improve guides, add tutorials, fix typos
+- **Testing**: Add unit tests, integration tests, or benchmarks
+- **Bug Fixes**: Fix reported issues
+- **Performance**: Optimize queries, caching, or workflows
+- **Localization**: Add support for more languages
+
+### Code of Conduct
+
+- Be respectful and inclusive
+- Provide constructive feedback
+- Focus on what's best for the community
+- Show empathy towards others
 
 ---
 
 ## 🐛 Troubleshooting
 
-- Check `.env` configuration and database migrations.
-- Ensure Python and Node.js versions match requirements.
-- See agent logs for errors in backend services.
-- For frontend issues, check browser console and Next.js logs.
+### Common Issues
+
+**Issue: "Module not found" errors in backend**
+```bash
+Solution:
+1. Ensure virtual environment is activated
+2. Reinstall dependencies: pip install -r requirements.txt
+3. Check Python version (3.8+)
+```
+
+**Issue: Database connection errors in frontend**
+```bash
+Solution:
+1. Verify PostgreSQL is running
+2. Check DATABASE_URL in .env.local
+3. Run: npx prisma generate && npx prisma db push
+4. Check database credentials
+```
+
+**Issue: API key errors or rate limiting**
+```bash
+Solution:
+1. Verify API keys in .env file
+2. Check API key quotas and limits
+3. Consider using offline mode for development
+4. Implement caching to reduce API calls
+```
+
+**Issue: RAG retrieval returns no documents**
+```bash
+Solution:
+1. Check if vector store is populated
+2. Verify file paths in RAG configuration
+3. Ensure embeddings are generated
+4. Check VECTOR_DB_PATH in .env
+```
+
+**Issue: Agents not responding or timing out**
+```bash
+Solution:
+1. Check internet connectivity
+2. Verify agent timeout settings
+3. Review agent logs for specific errors
+4. Increase AGENT_TIMEOUT in .env
+```
+
+**Issue: Frontend build failures**
+```bash
+Solution:
+1. Clear node_modules and reinstall: rm -rf node_modules && npm install
+2. Clear Next.js cache: rm -rf .next
+3. Check for TypeScript errors: npm run build
+4. Verify all environment variables are set
+```
+
+**Issue: Docker container crashes**
+```bash
+Solution:
+1. Check docker logs: docker-compose logs
+2. Verify environment variables in docker-compose.yml
+3. Ensure sufficient resources (memory, CPU)
+4. Check port conflicts
+```
+
+### Getting Help
+
+- **Check Logs**: Review application logs for detailed error messages
+- **Documentation**: See `Frontend/docs/` for detailed guides
+- **GitHub Issues**: Search or create an issue at [GitHub Issues](https://github.com/sanskaryo/AgroAI/issues)
+- **Agent Logs**: Check backend console output for agent-specific errors
+
+### Performance Optimization Tips
+
+1. **Enable Caching**: GPTCache reduces API calls significantly
+2. **Use Offline Mode**: For development, use local models
+3. **Optimize Vector Store**: Reduce chunk sizes for faster retrieval
+4. **Parallel Processing**: Leverage parallel RAG for multiple queries
+5. **Database Indexing**: Add indexes to frequently queried fields
 
 ---
 
