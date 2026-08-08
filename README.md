@@ -35,11 +35,13 @@ AgroAI is a comprehensive AI-powered platform designed to assist farmers and agr
 
 Experience **AgroAI** in action — crop prediction, disease detection, and AI-powered farming assistance.
 
-[![Watch Demo](https://img.shields.io/badge/▶_Watch_Full_Demo-FF0000?style=for-the-badge\&logo=google-drive\&logoColor=white)](https://drive.google.com/file/d/1RVmhPzyOifZhYEtQrQDB2BHdqpP3Qtr/view?usp=sharing)
+[![Watch Demo](https://img.shields.io/badge/▶_Watch_Full_Demo-FF0000?style=for-the-badge\&logo=google-drive\&logoColor=white)](https://drive.google.com/file/d/1RVmhPzyOifZhYEtQrQDB2BHdqpP3Qqtr/view?usp=sharing)
 
 <br/>
 
-<a href="https://drive.google.com/file/d/1RVmhPzyOifZhYEtQrQDB2BHdqpP3Qtr/view?usp=sharing">
+
+
+<a href="https://drive.google.com/file/d/1RVmhPzyOifZhYEtQrQDB2BHdqpP3Qqtr/view?usp=sharing">
   <img
     src="https://raw.githubusercontent.com/sanskaryo/AgroAI/main/backend-main/image.png"
     alt="AgroAI Demo"
