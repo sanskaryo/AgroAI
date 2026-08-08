@@ -1,6 +1,6 @@
 # AgroAI: Agricultural AI Assistant
 
-AgroAI is a comprehensive AI-powered platform designed to assist farmers and agricultural professionals with actionable insights, decision support, and practical tools. The system combines advanced AI models with user-friendly interfaces for crop management, disease detection, weather forecasting, market analysis, and more.
+AgroAI is a comprehensive AI-powered platform designed to assist farmers and agricultural professionals with actionable insights, decision support, and practical tools. The system combines advanced[...]
 
 ---
 
@@ -24,6 +24,18 @@ AgroAI is a comprehensive AI-powered platform designed to assist farmers and agr
    npm run dev
    ```
 6. **Access the app** at [http://localhost:3000](http://localhost:3000)
+
+---
+
+## 🎬 Video Tutorial
+
+Watch a step-by-step video walkthrough of AgroAI below (Google Drive preview):
+
+<iframe src="https://drive.google.com/file/d/1RVmhPzyOifZhYEtQrQDB2BHdqpP3Qqtr/preview" width="640" height="360" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+
+If the preview does not render on GitHub, open the direct preview link in your browser:
+
+https://drive.google.com/file/d/1RVmhPzyOifZhYEtQrQDB2BHdqpP3Qqtr/preview
 
 ---
 
